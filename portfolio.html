@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Lahouel Nassim</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-item active-link" onclick="showSection('accueil', this)">Accueil</a></li>
+                <li><a href="#" class="nav-item" onclick="showSection('cv-section', this)">Mon CV</a></li>
+                <li><a href="#" class="nav-item" onclick="showSection('objectifs', this)">Objectifs</a></li>
+                <li><a href="#" class="nav-item" onclick="showSection('competences', this)">Compétences</a></li>
+                <li><a href="#" class="nav-item" onclick="showSection('realisations', this)">Réalisations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        
+        <section id="accueil" class="content-section active">
+            <div class="container">
+                <div class="hero">
+                    <h1>Lahouel Nassim</h1>
+                    <p class="subtitle">Étudiant en BUT1 Informatique</p>
+                    <div class="mission">
+                        <h2>Énoncé de mission</h2>
+                        <p>"Je suis un étudiant motivé qui souhaite en apprendre plus sur le monde de l’informatique pour continuer mon parcours dans le domaine que j'aurai choisi"</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="cv-section" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Mon Curriculum Vitae</h2>
+                <div class="cv-container">
+                    <p>Vous pouvez consulter mon parcours académique et mes expériences professionnelles en téléchargeant mon CV complet au format PDF.</p>
+                    <div class="cv-buttons">
+                        <a href="CV_Lahouel_Nassim.pdf" target="_blank" class="btn btn-view">Visualiser le CV</a>
+                        <a href="CV_Lahouel_Nassim.pdf" download="CV_Lahouel_Nassim" class="btn btn-download">Télécharger (PDF)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="objectifs" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Objectifs Professionnels</h2>
+                <div class="obj-grid">
+                    <div class="obj-card">
+                        <h3>Court terme</h3>
+                        <p>Obtenir mon BUT Informatique avec succès et consolider mes bases en développement.</p>
+                    </div>
+                    <div class="obj-card">
+                        <h3>Long terme</h3>
+                        <p>Utiliser les compétences acquises pour se spécialiser dans le développement logiciel ou la cybersécurité.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="competences" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Compétences & Outils</h2>
+                <div class="skills-wrapper">
+                    <div class="skill-category">
+                        <h3>Programmation</h3>
+                        <ul>
+                            <li>HTML5 / CSS3 (Flexbox & Responsive)</li>
+                            <li>Python (Algorithmique & Jeux)</li>
+                            <li>SQL (Gestion de bases de données)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Outils & Soft Skills</h3>
+                        <ul>
+                            <li>VS Code, PackOffice, Canva</li>
+                            <li>Gestion de projet & Travail d'équipe</li>
+                            <li>Rigueur & Résolution de problèmes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="realisations" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Mes Réalisations</h2>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <img src="muraille_chine.jpg" alt="Site Muraille de Chine" class="project-img">
+                        <h3>Site UNESCO - Muraille de Chine</h3>
+                        <p>Réalisation d'un site web interactif utilisant les balises structurantes et le responsive design.</p>
+                    </article>
+                    <article class="project-card">
+                        <img src="imgwallisyou.webp" alt="Jeu Wall is You" class="project-img">
+                        <h3>Wall is You</h3>
+                        <p>Développement complet d'un jeu vidéo en Python mettant en pratique la logique de programmation.</p>
+                    </article>
+                    <article class="project-card">
+                        <img src="daktari2.png" alt="Base de données" class="project-img">
+                        <h3>Projet Base de Données</h3>
+                        <p>Conception et implémentation d'une base de données avec requêtes SQL complexes.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Lahouel Nassim - Portfolio BUT Informatique</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId, element) {
+            // Masquer toutes les sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(sec => sec.classList.remove('active'));
+
+            // Afficher la section cible
+            const target = document.getElementById(sectionId);
+            target.classList.add('active');
+
+            // Gérer l'état actif du menu
+            const links = document.querySelectorAll('.nav-item');
+            links.forEach(link => link.classList.remove('active-link'));
+            element.classList.add('active-link');
+
+            // Retour en haut de page fluide
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
